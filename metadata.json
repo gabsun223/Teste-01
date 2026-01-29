@@ -1,0 +1,8 @@
+{
+  "name": "MentorConcursos AI",
+  "description": "Uma plataforma inteligente de mentoria para concursos que organiza ciclos de estudo em blocos de 30-45min, ajustando-se ao seu desempenho e à incidência dos temas em provas.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
