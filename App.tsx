@@ -52,26 +52,26 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
 
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
-      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-5 gap-0 bg-white rounded-[2.5rem] shadow-2xl shadow-indigo-100 overflow-hidden border border-slate-100">
+      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-5 gap-0 bg-white rounded-[2.5rem] shadow-2xl shadow-blue-100 overflow-hidden border border-slate-100">
         
         {/* Left Side: Branding & Welcome */}
-        <div className="md:col-span-2 bg-indigo-600 p-10 text-white flex flex-col justify-between">
+        <div className="md:col-span-2 bg-blue-600 p-10 text-white flex flex-col justify-between">
           <div>
             <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
               <BrainCircuit size={28} />
             </div>
             <h1 className="text-3xl font-bold mb-4 leading-tight">Bem-vindo à sua nova jornada.</h1>
-            <p className="text-indigo-100 leading-relaxed">
+            <p className="text-blue-100 leading-relaxed">
               Vamos configurar sua mentoria personalizada. Precisamos entender seu tempo e seus desafios para criar o plano perfeito.
             </p>
           </div>
           <div className="space-y-4">
             <div className="flex items-center gap-3 text-sm bg-white/10 p-4 rounded-2xl">
-              <Target size={18} className="text-indigo-300" />
+              <Target size={18} className="text-blue-300" />
               <span>Baseado em incidência real de provas</span>
             </div>
             <div className="flex items-center gap-3 text-sm bg-white/10 p-4 rounded-2xl">
-              <Clock size={18} className="text-indigo-300" />
+              <Clock size={18} className="text-blue-300" />
               <span>Blocos de 30-45min otimizados</span>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
             <section>
               <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">1. Tempo Disponível</label>
               <div className="flex items-center gap-4 bg-slate-50 p-5 rounded-3xl border border-slate-100">
-                <div className="p-3 bg-white rounded-2xl shadow-sm text-indigo-600">
+                <div className="p-3 bg-white rounded-2xl shadow-sm text-blue-600">
                   <Clock size={24} />
                 </div>
                 <div className="flex-1">
@@ -94,10 +94,10 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
                   <input 
                     type="range" min="1" max="12" value={hours} 
                     onChange={e => setHours(Number(e.target.value))}
-                    className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600 mt-2"
+                    className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
                   />
                 </div>
-                <span className="text-2xl font-black text-indigo-600 w-12 text-center">{hours}h</span>
+                <span className="text-2xl font-black text-blue-600 w-12 text-center">{hours}h</span>
               </div>
             </section>
 
@@ -108,12 +108,12 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
                 <input 
                   type="text" value={name} onChange={e => setName(e.target.value)}
                   placeholder="Nome da matéria (ex: Português)"
-                  className="w-full px-5 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500 outline-none transition-all shadow-sm"
+                  className="w-full px-5 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-800 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-500 outline-none transition-all shadow-sm"
                 />
                 <div className="grid grid-cols-2 gap-4">
                   <select 
                     value={weight} onChange={e => setWeight(Number(e.target.value))}
-                    className="px-5 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-800 outline-none shadow-sm focus:ring-2 focus:ring-indigo-500 appearance-none"
+                    className="px-5 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-800 outline-none shadow-sm focus:ring-2 focus:ring-blue-500 appearance-none"
                   >
                     <option value={1}>Peso 1 (Baixo)</option>
                     <option value={3}>Peso 3 (Médio)</option>
@@ -121,7 +121,7 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
                   </select>
                   <select 
                     value={diff} onChange={e => setDiff(Number(e.target.value))}
-                    className="px-5 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-800 outline-none shadow-sm focus:ring-2 focus:ring-indigo-500 appearance-none"
+                    className="px-5 py-4 rounded-2xl border border-slate-100 bg-slate-50 text-slate-800 outline-none shadow-sm focus:ring-2 focus:ring-blue-500 appearance-none"
                   >
                     <option value={DifficultyLevel.EASY}>Fácil</option>
                     <option value={DifficultyLevel.MEDIUM}>Médio</option>
@@ -141,11 +141,11 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
                 {subs.length > 0 ? subs.map(s => (
                   <div key={s.id} className="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-100 group animate-in fade-in slide-in-from-top-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                       <div>
                         <span className="font-bold text-slate-700">{s.name}</span>
                         <div className="flex gap-2 mt-1">
-                          <span className="text-[10px] px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded-full font-bold uppercase">PESO {s.weight}</span>
+                          <span className="text-[10px] px-2 py-0.5 bg-blue-100 text-blue-600 rounded-full font-bold uppercase">PESO {s.weight}</span>
                           <span className="text-[10px] px-2 py-0.5 bg-slate-200 text-slate-600 rounded-full font-bold uppercase">{s.difficulty === 1 ? 'Fácil' : s.difficulty === 2 ? 'Médio' : 'Difícil'}</span>
                         </div>
                       </div>
@@ -169,7 +169,7 @@ const Onboarding = ({ onComplete }: { onComplete: (hours: number, subs: Subject[
                 onClick={() => onComplete(hours, subs)}
                 className={`w-full py-5 rounded-[1.5rem] font-bold flex items-center justify-center gap-3 transition-all ${
                   subs.length > 0 
-                    ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-200 hover:scale-[1.02] hover:bg-indigo-700' 
+                    ? 'bg-blue-600 text-white shadow-xl shadow-blue-200 hover:scale-[1.02] hover:bg-blue-700' 
                     : 'bg-slate-100 text-slate-400 cursor-not-allowed'
                 }`}
               >
@@ -194,7 +194,7 @@ const Sidebar = ({ activeTab, setActiveTab }: { activeTab: string, setActiveTab:
   return (
     <aside className="w-64 bg-slate-900 text-white flex-shrink-0 flex flex-col h-screen fixed left-0 top-0 z-10">
       <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-        <div className="p-2 bg-indigo-600 rounded-lg">
+        <div className="p-2 bg-blue-600 rounded-lg">
           <BrainCircuit size={24} />
         </div>
         <h1 className="text-xl font-bold tracking-tight">MentorAI</h1>
@@ -205,7 +205,7 @@ const Sidebar = ({ activeTab, setActiveTab }: { activeTab: string, setActiveTab:
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-              activeTab === tab.id ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
+              activeTab === tab.id ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
             }`}
           >
             <tab.icon size={20} />
@@ -218,7 +218,7 @@ const Sidebar = ({ activeTab, setActiveTab }: { activeTab: string, setActiveTab:
           <p className="text-xs text-slate-400 uppercase tracking-wider mb-2">Plano Atual</p>
           <p className="font-semibold">Foco em Aprovação</p>
           <div className="w-full bg-slate-700 h-1 rounded-full mt-3 overflow-hidden">
-            <div className="bg-indigo-500 h-full w-[65%]" />
+            <div className="bg-blue-500 h-full w-[65%]" />
           </div>
         </div>
       </div>
@@ -251,7 +251,7 @@ const SubjectManager = ({ subjects, setSubjects }: { subjects: Subject[], setSub
     <div className="space-y-6">
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
         <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
-          <Plus size={20} className="text-indigo-600" /> Adicionar Matéria
+          <Plus size={20} className="text-blue-600" /> Adicionar Matéria
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
           <div className="col-span-2">
@@ -261,7 +261,7 @@ const SubjectManager = ({ subjects, setSubjects }: { subjects: Subject[], setSub
               value={newName} 
               onChange={(e) => setNewName(e.target.value)}
               placeholder="Ex: Direito Penal" 
-              className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="w-full px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
             />
           </div>
           <div>
@@ -276,7 +276,7 @@ const SubjectManager = ({ subjects, setSubjects }: { subjects: Subject[], setSub
           </div>
           <button 
             onClick={addSubject}
-            className="bg-indigo-600 text-white px-6 py-2.5 rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+            className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium"
           >
             Adicionar
           </button>
@@ -285,7 +285,7 @@ const SubjectManager = ({ subjects, setSubjects }: { subjects: Subject[], setSub
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {subjects.map(sub => (
-          <div key={sub.id} className="bg-white p-5 rounded-2xl border border-slate-200 hover:border-indigo-300 transition-colors group">
+          <div key={sub.id} className="bg-white p-5 rounded-2xl border border-slate-200 hover:border-blue-300 transition-colors group">
             <div className="flex justify-between items-start mb-3">
               <h3 className="font-bold text-lg text-slate-800">{sub.name}</h3>
               <button onClick={() => removeSubject(sub.id)} className="text-slate-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100">
@@ -303,7 +303,7 @@ const SubjectManager = ({ subjects, setSubjects }: { subjects: Subject[], setSub
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Incidência em Prova</span>
-                <span className="text-indigo-600 font-bold">{sub.incidence}%</span>
+                <span className="text-blue-600 font-bold">{sub.incidence}%</span>
               </div>
             </div>
           </div>
@@ -330,7 +330,7 @@ const DailyTasks = ({ tasks, updateTask }: { tasks: Task[], updateTask: (id: str
     <div className="space-y-4">
       {todayTasks.map((task, idx) => (
         <div key={task.id} className="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-6 shadow-sm">
-          <div className="flex-shrink-0 w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center font-bold text-xl">
+          <div className="flex-shrink-0 w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center font-bold text-xl">
             {idx + 1}
           </div>
           <div className="flex-1">
@@ -366,7 +366,7 @@ const DailyTasks = ({ tasks, updateTask }: { tasks: Task[], updateTask: (id: str
           ) : (
             <div className="text-right">
               {task.accuracy !== undefined && (
-                <p className="text-xs font-medium text-slate-400">Aproveitamento: <span className="text-indigo-600 font-bold">{task.accuracy}%</span></p>
+                <p className="text-xs font-medium text-slate-400">Aproveitamento: <span className="text-blue-600 font-bold">{task.accuracy}%</span></p>
               )}
             </div>
           )}
@@ -396,7 +396,7 @@ const Dashboard = ({ stats, advice, subjects, tasks }: { stats: Stats, advice: s
           <p className="text-sm font-medium text-slate-500 mb-1">Execução Total</p>
           <p className="text-3xl font-extrabold text-slate-900">{stats.executionRate.toFixed(1)}%</p>
           <div className="mt-4 w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-            <div className="bg-indigo-600 h-full" style={{ width: `${stats.executionRate}%` }} />
+            <div className="bg-blue-600 h-full" style={{ width: `${stats.executionRate}%` }} />
           </div>
         </div>
         <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
@@ -418,7 +418,7 @@ const Dashboard = ({ stats, advice, subjects, tasks }: { stats: Stats, advice: s
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
           <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
-            <TrendingUp size={20} className="text-indigo-600" /> Tarefas por Matéria
+            <TrendingUp size={20} className="text-blue-600" /> Tarefas por Matéria
           </h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
@@ -427,7 +427,7 @@ const Dashboard = ({ stats, advice, subjects, tasks }: { stats: Stats, advice: s
                 <XAxis dataKey="name" axisLine={false} tickLine={false} fontSize={10} />
                 <YAxis axisLine={false} tickLine={false} fontSize={12} />
                 <Tooltip />
-                <Bar dataKey="concluido" fill="#4f46e5" radius={[4, 4, 0, 0]} name="Concluído" />
+                <Bar dataKey="concluido" fill="#2563eb" radius={[4, 4, 0, 0]} name="Concluído" />
                 <Bar dataKey="total" fill="#e2e8f0" radius={[4, 4, 0, 0]} name="Total" />
               </BarChart>
             </ResponsiveContainer>
@@ -440,7 +440,7 @@ const Dashboard = ({ stats, advice, subjects, tasks }: { stats: Stats, advice: s
           </div>
           <div className="relative z-10">
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <BrainCircuit size={24} className="text-indigo-400" /> Insight da Mentoria
+              <BrainCircuit size={24} className="text-blue-400" /> Insight da Mentoria
             </h3>
             <div className="prose prose-invert max-w-none">
               <p className="text-slate-300 leading-relaxed whitespace-pre-wrap">
@@ -562,7 +562,7 @@ const App = () => {
                 type="number" 
                 value={dailyHours} 
                 onChange={(e) => setDailyHours(Number(e.target.value))}
-                className="w-12 font-bold text-indigo-600 outline-none"
+                className="w-12 font-bold text-blue-600 outline-none"
                />
              </div>
              <button 
